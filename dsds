@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buraco do Padre - Ponta Grossa / PR</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: lightgray;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .card-atracao {
+            text-align: center;
+            max-width: 650px;
+            background-color: #fafafa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .card-atracao img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .card-atracao h3 {
+            margin: 15px 0 8px;
+            color: #2c3e50;
+        }
+
+        .card-atracao p {
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Buraco do Padre</h1>
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main id="conteudo">
+        <!-- O JavaScript criará os elementos aqui -->
+    </main>
+
+    <script>
+        const main = document.getElementById("conteudo");
+
+        // CRIAR O TÍTULO PRINCIPAL
+        const titulo = document.createElement("h2");
+        titulo.textContent = "Explorando o Buraco do Padre";
+        titulo.style.textAlign = "center";
+        main.appendChild(titulo);
+
+        // CRIAR O PARÁGRAFO INTRODUTÓRIO
+        const paragrafo = document.createElement("p");
+        paragrafo.textContent = "Localizado no município de Ponta Grossa / PR, nos Campos Gerais.";
+        paragrafo.style.textAlign = "center";
+        main.appendChild(paragrafo);
+
+        // DADOS DAS IMAGENS E TEXTOS
+        const atracoes = [
+            {
+                titulo: "1. A Cachoeira",
+                imagem: "https://turistandopeloparana.com/wp-content/uploads/2017/12/%C3%81guas-cristalinas-Buraco-do-Padre.jpg",
+                alt: "Cachoeira dentro de uma caverna de pedra com abertura no topo",
+                descricao: "A principal atração do parque é uma impressionante furna (anfiteatro subterrâneo) com uma cascata de 30 metros de altura que deságua em um poço raso de águas cristalinas e geladas."
+            },
+            {
+                titulo: "2. Fenda da Freira",
+                imagem: "https://www.folhadelondrina.com.br/img/Facebook/3260000/Buraco-do-Padre0326161500202406131950.jpg?xid=6089267",
+                alt: "Paredões rochosos estreitos cobertos de vegetação",
+                descricao: "Uma fenda natural esculpida na rocha arenítica com cerca de 300 metros de extensão, cercada por paredões verticais cobertos de musgos e samambaias."
+            },
+            {
+                titulo: "3. Trilhas Ecológicas e Passarelas",
+                imagem: "https://buracodopadre.com.br/wp-content/uploads/2023/12/site-atracoes-trilha-principal.jpg",
+                alt: "Passarela de madeira em meio a mata nativa",
+                descricao: "O acesso até a furna é feito por uma trilha acessível de aproximadamente 880 metros, com passarelas suspensas de madeira que atravessam a mata nativa dos Campos Gerais."
+            }
+        ];
+
+        // CRIAR O CONTÊINER DA GALERIA
+        const galeria = document.createElement("div");
+        galeria.classList.add("galeria");
+
+        // LOOP PARA CRIAR CADA FOTO COM SUA FALA EMBAIXO
+        atracoes.forEach(item => {
+            const card = document.createElement("div");
+            card.classList.add("card-atracao");
+
+            const img = document.createElement("img");
+            img.src = item.imagem;
+            img.alt = item.alt;
+
+            const subtitulo = document.createElement("h3");
+            subtitulo.textContent = item.titulo;
+
+            const texto = document.createElement("p");
+            texto.textContent = item.descricao;
+
+            card.appendChild(img);
+            card.appendChild(subtitulo);
+            card.appendChild(texto);
+            galeria.appendChild(card);
+        });
+
+        main.appendChild(galeria);
+    </script>
+
+</body>
+</html>
